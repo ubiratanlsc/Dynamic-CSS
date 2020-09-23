@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <style>
+        :root {
+            --login: white;
+            --senha: white;
+            --colorText:black ;
+            --fontTamanho:;
+        }
+
+        body {
+            margin: 0%;
+        }
+
+        #login {
+            background-color: var(--login);
+            color: var(--colorText);
+            font-size: var(--fontTamanho);
+        }
+
+        #password {
+            background-color: var(--senha);
+            color: var(--colorText);
+            font-size: var(--fontTamanho);
+        }
+
+        .display-3 {
+            text-align: center;
+        }
+        .form-control{
+            margin-bottom: 1em;
+        }
+    </style>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-3">CSS Dinamico</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col mb-4">
+                <h4>Instruções</h4>
+                <p>
+                    Insira um Login e uma Senha, ao inserir um login ou senha errada o campo correspondente deverá
+                    mudar a cor para <br>Vermelho ( LOGIN ) e Laranja( Senha )<br>
+                    ao digitar corretamente os valores os campos ficaram verdes e a font ficará da cor branca, tanto login quanto senha.
+                </p>
+            </div>
+            <div class="col mb-4">
+                <input type="text" class="form-control" placeholder="Login" id="login">
+                <input type="password" class="form-control" placeholder="Senha" id="password">
+                <button type="button" class="btn btn-dark" onclick="validar()">Login</button>
+                <button type="button" class="btn btn-dark" onclick="reset()">Reset</button>
+            </div>
+            <div class="col mb-4">
+                <p>Login:Root</p>
+                <p>Senha:Root</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validar() {
+            const login = document.getElementById("login").value;
+            const senha = document.getElementById("password").value;
+            const root = document.documentElement;
+            const loginVerificado = verificarLogin()
+            const senhaVerificada = verificarSenha()
+            function verificarLogin() {
+                if (login == "root") {
+                    root.style.setProperty('--login', '#00FF00');
+                    root.style.setProperty('--colorText', 'white');
+                    root.style.setProperty('--fontTamanho', '15px');
+                    console.log("login está sendo chamado")
+                } else {
+                    console.log("Login Não foi Verificado");
+                    root.style.setProperty('--login', '#B22222');
+                    root.style.setProperty('--colorText', 'white');
+                }
+                return
+            }
+            function verificarSenha() {
+                if (senha == "root") {
+                    root.style.setProperty('--senha', '#00FF00');
+                    console.log("Senha está sendo chamada")
+                } else {
+                    console.log("Senha Não foi Verificada");
+                    root.style.setProperty('--senha', '#FF4500', );
+                }
+                return
+            }
+        }
+        function reset(){
+            const login = document.getElementById("login").value="";
+            const senha = document.getElementById("password").value="";
+            const root = document.documentElement;
+            root.style.setProperty('--login', '');
+            root.style.setProperty('--senha', '');
+            console.log("resetado!")
+
+        }
+    </script>
+</body>
+
+</html>
