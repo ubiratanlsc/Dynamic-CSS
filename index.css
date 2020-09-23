@@ -1,0 +1,29 @@
+:root {
+    --login: white;
+    --senha: white;
+    --colorText:black ;
+    --fontTamanho:;
+}
+
+body {
+    margin: 0%;
+}
+
+#login {
+    background-color: var(--login);
+    color: var(--colorText);
+    font-size: var(--fontTamanho);
+}
+
+#password {
+    background-color: var(--senha);
+    color: var(--colorText);
+    font-size: var(--fontTamanho);
+}
+
+.display-3 {
+    text-align: center;
+}
+.form-control{
+    margin-bottom: 1em;
+}
