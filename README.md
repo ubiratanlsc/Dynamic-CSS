@@ -1,4 +1,4 @@
-# Manipulação do CSS através de JavaScrpit
+# Manipulação do CSS através de JavaScript
 Projeto criando para estudar alterações de propriedades em CSS com o uso de variáveis JavaScript.
 baseado no User Stories do App-Ideas. 
 # https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Dynamic-CSSVar-app.md
